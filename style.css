@@ -1,0 +1,145 @@
+/*  fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
+
+/* resets */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --button-color: hsl(158, 36%, 37%);
+  --primary-bg-color: hsl(30, 38%, 92%);
+  --primary-text-color: hsl(212, 21%, 14%);
+  --secondar-text-color: hsl(228, 12%, 48%);
+  --secondary-bg-color: hsl(0, 0%, 100%);
+  --secondary-font: "Montserrat", sans-serif;
+  --primary-font: "Fraunces", serif;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+}
+
+p {
+  font-size: 0.875rem;
+  color: var(--secondar-text-color);
+  font-family: var(--secondary-font);
+}
+
+h1 {
+  color: var(--primary-text-color);
+  font-family: var(--primary-font);
+}
+
+/* utlity classes */
+.flex {
+  display: flex;
+  gap: 1.25rem;
+}
+
+/* product card */
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 600px;
+  background-color: var(--secondary-bg-color);
+}
+
+.product-image-mobile {
+  display: none;
+}
+
+.product-image-desktop {
+  width: 300px;
+  height: 400px;
+}
+
+.product-details {
+  gap: 0px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+.product-type {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.price {
+  gap: 1rem !important;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.final-price {
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
+  color: var(--button-color);
+}
+.intial-price {
+  text-decoration: line-through;
+}
+
+.add-cart {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--button-color);
+  color: white;
+  font-family: var(--secondary-font);
+  transition: 0.5s ease-in;
+}
+
+.add-cart:hover {
+  background-color: hsl(158, 84%, 15%);
+}
+
+/* media quries */
+
+@media screen and (max-width: 580px) {
+  
+  .product-card{
+    overflow: auto;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 90vw;
+    height: 90vh;
+    align-items:center;  
+  }
+
+  .product-image-desktop{
+    display: none;
+  }
+
+  .product-image-mobile{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .product-details {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction:column;
+    align-content: space-evenly; 
+  }
+}
